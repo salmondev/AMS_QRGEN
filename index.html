@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Electron Playground</title>
+    <link rel="icon" href="src/electron.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="src/electron.ico" type="image/x-icon" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="src/js/qrcode.min.js"></script>
+
+
+
+</head>
+
+<body style="font-family: Kanit; margin:5%">
+    <h1>Hi Electron!</h1>
+    <img style="width:100px;height:100px;" src="src/ams.png" />
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    </br>
+    We are using Node.js
+    <b>
+        <script>
+            document.write(process.versions.node)
+        </script>
+    </b>, Chromium
+    <b>
+        <script>
+            document.write(process.versions.chrome)
+        </script>
+    </b>
+    , and Electron
+    <b>
+        <script>
+            document.write(process.versions.electron)
+        </script>.
+    </b>
+
+    <script>
+        // You can also require other files to run in this process
+        require('./renderer.js')
+    </script>
+    <div>
+        <p>ทดสอบ อิเล็กตรอน</p>
+        <h3>Generate QR Code</h3>
+        <form>
+            <input type="text" name="textQrcode" id="textQrcode">
+            <button type="button" class="btn btn-primary" onclick="createQRcode()" data-toggle="modal"
+                data-target="#exampleModal">PLAY !</button>
+            <button type="button" class="btn btn-danger" onclick="location.reload();">RESET !</button>
+            <div id="showQRcode" style="margin:2%"></div>
+        </form>
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">QR Code</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="showQRcode"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </br>
+    <div class="alert alert-primary" role="alert">
+        Electron Playground !
+    </div>
+
+    <div class="footer">
+        <h5 class="bg-primary text-light" align="center">Copyright © 2019 AMS DEV TEAM</h5>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase">AMS DEV TEAM</h5>
+                    <p>Panurut Chinakul</p>
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="http://amsapp.net/">AMS System</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https//dev.amsapp.net/"> dev.amsapp.net</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    <script>
+        function createQRcode() {
+            var textQrcode = document.getElementById('textQrcode');
+            var showQRcode = document.getElementById('showQRcode');
+
+            if (textQrcode.value.trim() !== '') {
+                showQRcode.innerHTML = '';
+                new QRCode(showQRcode, textQrcode.value);
+                textQrcode.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
