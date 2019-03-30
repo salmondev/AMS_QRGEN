@@ -1,22 +1,16 @@
 {
-  "name": "electron-quick-start",
+  "private": "true",
+  "name": "electron-sample-print-to-pdf",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "keywords": [],
+  "author": "stupiddog akai.tosaka@gmail.com",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^4.1.1"
+    "electron": "^1.4.15"
   }
 }
