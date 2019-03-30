@@ -1,0 +1,8 @@
+version: 1.0.0
+files:
+  - url: AMS_QRGEN-Setup-1.0.0.exe
+    sha512: bM+buCQ3CBjbUAzd8M9QTks777NFu4IZfG5jbIx4RruaJBJkSli/14qULlBdgg+anP2HIBTn59DXAH4lVVEFvg==
+    size: 35416774
+path: AMS_QRGEN-Setup-1.0.0.exe
+sha512: bM+buCQ3CBjbUAzd8M9QTks777NFu4IZfG5jbIx4RruaJBJkSli/14qULlBdgg+anP2HIBTn59DXAH4lVVEFvg==
+releaseDate: '2019-03-30T08:48:36.762Z'

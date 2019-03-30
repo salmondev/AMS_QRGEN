@@ -1,0 +1,4 @@
+owner: salmondev
+repo: AMS_QRGEN
+provider: github
+updaterCacheDirName: ams_qrgen-updater

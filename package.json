@@ -1,16 +1,20 @@
 {
-  "private": "true",
-  "name": "electron-sample-print-to-pdf",
+  "private": false,
+  "name": "AMS_QRGEN",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "keywords": [],
-  "author": "stupiddog akai.tosaka@gmail.com",
+  "author": "SENTINELZX",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^1.4.15"
+    "electron": "^1.4.15",
+    "electron-builder": "^20.39.0"
   }
 }
